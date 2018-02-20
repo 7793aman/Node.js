@@ -12,7 +12,7 @@
    "lint:watch":"npm run lint -- --watch",
     "share":"npm-run-all --parallel open:src localtunnel",
     "test":"mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
-    "test:watch":"npm run test --watch"
+    "test:watch":"npm run test -- --watch"
   },
   "author": "Cory House",
   "license": "MIT",

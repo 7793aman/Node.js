@@ -1,8 +1,8 @@
 # Test against thsi version
 environment:
   matrix:
-    #node.js
-    -nodejs_version : "8"
+    # node.js
+    - nodejs_version : "8"
 
 
 install:
@@ -10,8 +10,8 @@ install:
   -npm install
 
 test_script:
-    -node --version
-    -npm --version
-    -npm test
+    - node --version
+    - npm --version
+    - npm test
 
 build:off

@@ -10,16 +10,16 @@ expect(true).to.equal(true);
 });
 
 
-// describe('index.html',() => {
+describe('index.html',() => {
 
-//   it('should say hello',(done) => {
+  it('should say hello',(done) => {
 
-//     const index=fs.readFileSync('./src/index.html',"utf-8");
-//     jsdom.env(index,(err,window) =>  {
-// const h1=window.document.getElementsByTagName('h1')[0];
-// expect(h1.innerHTML).to.equal("hello world");
-//done();
-// window.close();
-//     });
-//   });
-// });
+    const index=fs.readFileSync('./src/index.html',"utf-8");
+    jsdom.env(index,(err,window) =>  {
+const h1=window.document.getElementsByTagName('h1')[0];
+expect(h1.innerHTML).to.equal("hello world");
+done();
+window.close();
+    });
+  });
+});

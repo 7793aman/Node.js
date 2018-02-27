@@ -27,6 +27,19 @@ app.get('/',function(req,res){
 console.log(__dirname);
 
 
+app.get('/users',function(req,res){
+
+res.json([
+
+  {"id":1,"firstName":"Bob","lastName":"Smith","email":"bob@gmail.com"},
+  {"id":1,"firstName":"aman","lastName":"jain","email":"7793aman@gmail.com"},
+  {"id":1,"firstName":"rupali","lastName":"bajpai","email":"rupali@gmail.com"}
+
+]);
+
+
+});
+
 app.listen(port,function(err){
 
   if(err){

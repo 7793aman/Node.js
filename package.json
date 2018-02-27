@@ -3,20 +3,26 @@
   "version": "1.0.0",
   "de scription": "JavaScript development environment Pluralsight course by Cory House",
   "scripts": {
-    "prestart":"babel-node buildScripts/startMessage.js lint-watch",
+    "prestart": "babel-node buildScripts/startMessage.js lint-watch",
     "start": "npm-run-all --parallel security-check open:src test:watch",
-    "security-check":"nsp check",
-    "open:src":"babel-node buildScripts/srcServer.js",
-    "localtunnel":"lt --port 3000 --subdomain 7793aman",
-   "lint":"esw webpack.congig.* src buildcsripts --color",
-   "lint:watch":"npm run lint -- --watch",
-    "share":"npm-run-all --parallel open:src localtunnel",
-    "test":"mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
-    "test:watch":"npm run test -- --watch"
+    "security-check": "nsp check",
+    "open:src": "babel-node buildScripts/srcServer.js",
+    "localtunnel": "lt --port 3000 --subdomain 7793aman",
+    "lint": "esw webpack.congig.* src buildcsripts --color",
+    "lint:watch": "npm run lint -- --watch",
+    "share": "npm-run-all --parallel open:src localtunnel",
+    "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
+    "test:watch": "npm run test -- --watch",
+    "generate-mock-data": "babel-node buildScripts/generateMockData.js",
+    "prestart-mockapi": "npm run generate-mock-data",
+    "start-mockapi": "json-server --watch src/api/db.json --port 3001",
+    "inde": "babel-node src/index.js"
   },
   "author": "Cory House",
   "license": "MIT",
   "dependencies": {
+    "es6-promise": "^4.2.4",
+    "isomorphic-fetch": "^2.2.1",
     "whatwg-fetch": "1.0.0"
   },
   "devDependencies": {
